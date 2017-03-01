@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_question1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.quizapp.Question1Activity">
+
+    <TextView
+        style="@style/Question"
+        android:text="@string/question_robots" />
+
+    <EditText
+        android:id="@+id/answer_robots"
+        style="@style/Hint"
+        android:hint="@string/hint_edit_view" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView style="@style/BottomBar" />
+
+        <TextView
+            android:id="@+id/next"
+            style="@style/Next"
+            android:text="@string/next" />
+
+        <TextView
+            style="@style/BottomCaption"
+            android:text="@string/q1" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.quizapp.Question1Activity">
+
+    <LinearLayout
+        android:id="@+id/activity_question1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Question"
+            android:text="@string/question_translation" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radiobutton1Q4"
+                    style="@style/IconList"
+                    android:text="@string/answer1_translation" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton2Q4"
+                    style="@style/IconList"
+                    android:text="@string/answer2_translation" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton3Q4"
+                    style="@style/IconList"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/answer3_translation" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/buttonTextColor"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/submit_answers_button"
+            android:textColor="@color/buttonSelectedTextColor" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView style="@style/BottomBar" />
+
+            <TextView
+                android:id="@+id/previous"
+                style="@style/Previous"
+                android:text="@string/previous" />
+
+            <TextView
+                style="@style/BottomCaption"
+                android:text="@string/q4" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

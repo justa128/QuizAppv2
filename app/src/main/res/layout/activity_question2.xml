@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_question1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.quizapp.Question1Activity">
+
+    <TextView
+        style="@style/Question"
+        android:text="@string/question_cancer_treatment" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp">
+
+        <CheckBox
+            android:id="@+id/checkbox1Q2"
+            style="@style/IconList"
+            android:text="@string/answer1_cancer_treatment" />
+
+        <CheckBox
+            android:id="@+id/checkbox2Q2"
+            style="@style/IconList"
+            android:text="@string/answer2_cancer_treatment" />
+
+        <CheckBox
+            android:id="@+id/checkbox3Q2"
+            style="@style/IconList"
+            android:layout_marginBottom="24dp"
+            android:text="@string/answer3_cancer_treatment" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView style="@style/BottomBar" />
+
+        <TextView
+            android:id="@+id/next"
+            style="@style/Next"
+            android:text="@string/next" />
+
+        <TextView
+            android:id="@+id/previous"
+            style="@style/Previous"
+            android:text="@string/previous" />
+
+        <TextView
+            style="@style/BottomCaption"
+            android:text="@string/q2" />
+
+    </RelativeLayout>
+</LinearLayout>

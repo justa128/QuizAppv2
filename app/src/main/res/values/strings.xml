@@ -1,0 +1,36 @@
+<resources>
+
+    <string name="app_name">Industries of the Future Quiz</string>
+    <string name="q1_name">Robots</string>
+    <string name="q2_name">Cancer Treatment</string>
+    <string name="q3_name">Cryptocurrencies</string>
+    <string name="q4_name">Machine Translation</string>
+    <string name="intro_text">Hi Ladies and Gents! I hope you will enjoy the quiz :))</string>
+    <string name="question_robots">What is the name of a \"female\" nursing aid robot? The robot was built by Toyota, as part of their Partner Robot Family, a line of robots to take care of world\'s growing geriatric population.</string>
+    <string name="question_cancer_treatment">2. What is the future of cancer treatment? Select all that apply. </string>
+    <string name="question_cryptocurrency">3. Which of the following are the names of cryptocurrencies? Select all that apply.</string>
+    <string name="question_translation">4. What will be possible for machine translation in 2025? Select only one option.</string>
+    <string name="hint_edit_view">Write your answer here&#8230;</string>
+    <string name="submit_answers_button">Submit Answers</string>
+    <string name="answer1_cancer_treatment">Genome sequencing that can identify genetic mutation.</string>
+    <string name="answer2_cancer_treatment">A liquid biopsy in which a blood sample is taken and tested for the presence of even the tiniest amount of tumor DNA.</string>
+    <string name="answer3_cancer_treatment">Robots temporarily inserted in human body that emit radiations into cancer cells with pinpoint accuracy, without damaging healthy living tissues.
+</string>
+    <string name="answer1_cryptocurrency">Darkcoin</string>
+    <string name="answer2_cryptocurrency">Bitcoin</string>
+    <string name="answer3_cryptocurrency">Catcoin</string>
+    <string name="answer4_cryptocurrency">Piggycoin</string>
+    <string name="answer5_cryptocurrency">CryptoMETH</string>
+    <string name="answer1_translation">Having a dinner with eight people at the table speaking eight different languages and the voice in your ear will always be whispering the one language you want to hear recreating the voice of the speaking person.</string>
+    <string name="answer2_translation">Having a dinner with eight people at the table speaking eight different languages and the voice in your ear will always be whispering the one language you want to hear, but the voice in your ear will be a computer voice.</string>
+    <string name="answer3_translation">Having a dinner with eight people at the table speaking only two different languages and the voice in your ear will always be whispering the one language you want to hear.</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="q1">Question 1</string>
+    <string name="q2">Question 2</string>
+    <string name="q3">Question 3</string>
+    <string name="q4">Question 4</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="quiz_title">Industries Of The Future Quiz</string>
+
+</resources>
