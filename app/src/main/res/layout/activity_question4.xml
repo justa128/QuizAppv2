@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.quizapp.Question1Activity">
+    tools:context=".Question4Activity">
 
     <LinearLayout
         android:id="@+id/activity_question1"

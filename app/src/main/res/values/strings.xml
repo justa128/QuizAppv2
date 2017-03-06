@@ -5,11 +5,10 @@
     <string name="q2_name">Cancer Treatment</string>
     <string name="q3_name">Cryptocurrencies</string>
     <string name="q4_name">Machine Translation</string>
-    <string name="intro_text">Hi Ladies and Gents! I hope you will enjoy the quiz :))</string>
     <string name="question_robots">What is the name of a \"female\" nursing aid robot? The robot was built by Toyota, as part of their Partner Robot Family, a line of robots to take care of world\'s growing geriatric population.</string>
-    <string name="question_cancer_treatment">2. What is the future of cancer treatment? Select all that apply. </string>
-    <string name="question_cryptocurrency">3. Which of the following are the names of cryptocurrencies? Select all that apply.</string>
-    <string name="question_translation">4. What will be possible for machine translation in 2025? Select only one option.</string>
+    <string name="question_cancer_treatment">What is the future of cancer treatment? Select all that apply. </string>
+    <string name="question_cryptocurrency">Which of the following are the names of cryptocurrencies? Select all that apply.</string>
+    <string name="question_translation">What will be possible for machine translation in 2025? Select only one option.</string>
     <string name="hint_edit_view">Write your answer here&#8230;</string>
     <string name="submit_answers_button">Submit Answers</string>
     <string name="answer1_cancer_treatment">Genome sequencing that can identify genetic mutation.</string>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.quizapp.Question1Activity">
+    tools:context=".Question1Activity">
 
     <TextView
         style="@style/Question"
@@ -26,6 +26,11 @@
             android:id="@+id/next"
             style="@style/Next"
             android:text="@string/next" />
+
+        <TextView
+            android:id="@+id/previous"
+            style="@style/Previous"
+            android:text="@string/previous" />
 
         <TextView
             style="@style/BottomCaption"

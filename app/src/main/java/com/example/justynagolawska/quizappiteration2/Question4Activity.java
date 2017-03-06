@@ -1,7 +1,9 @@
 package com.example.justynagolawska.quizappiteration2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,10 +14,16 @@ import android.widget.Toast;
 
 public class Question4Activity extends AppCompatActivity {
 
+    SharedPreferences mypref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question4);
+
+        final RadioButton radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
+
+        mypref = PreferenceManager.getDefaultSharedPreferences(this);
 
         ActionBar actionbar = getSupportActionBar();
 
@@ -49,7 +57,6 @@ public class Question4Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //Getting the answer to question 4 radio button 1
-                RadioButton radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
                 boolean isRadioButton1Q4 = radioButton1Q4.isChecked();
 
                 //Calculate Question 4 score
@@ -89,6 +96,72 @@ public class Question4Activity extends AppCompatActivity {
             result = 1;
         }
         return result;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        //Getting the answer to question 4 radio button 1
+        RadioButton radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
+        boolean isRadioButton1Q4 = radioButton1Q4.isChecked();
+
+        //Getting the answer to question 4 radio button 2
+        RadioButton radioButton2Q4 = (RadioButton) findViewById(R.id.radiobutton2Q4);
+        boolean isRadioButton2Q4 = radioButton2Q4.isChecked();
+
+        //Getting the answer to question 4 radio button 3
+        RadioButton radioButton3Q4 = (RadioButton) findViewById(R.id.radiobutton3Q4);
+        boolean isRadioButton3Q4 = radioButton3Q4.isChecked();
+
+        if(isRadioButton1Q4 == true){
+            mypref.edit().putBoolean("Isrb1Checked", true).apply();
+        }
+        else if(isRadioButton1Q4 == false){
+            mypref.edit().putBoolean("Isrb1Checked", false).apply();
+        }
+
+        if(isRadioButton2Q4 == true){
+            mypref.edit().putBoolean("Isrb2Checked", true).apply();
+        }
+        else if(isRadioButton2Q4 == false){
+            mypref.edit().putBoolean("Isrb2Checked", false).apply();
+        }
+
+        if(isRadioButton3Q4 == true){
+            mypref.edit().putBoolean("Isrb3Checked", true).apply();
+        }
+        else if(isRadioButton3Q4 == false){
+            mypref.edit().putBoolean("Isrb3Checked", false).apply();
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        RadioButton radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
+        RadioButton radioButton2Q4 = (RadioButton) findViewById(R.id.radiobutton2Q4);
+        RadioButton radioButton3Q4 = (RadioButton) findViewById(R.id.radiobutton3Q4);
+
+        if(mypref.contains("Isrb1Checked")){
+            if(mypref.getBoolean("Isrb1Checked",false)){
+                radioButton1Q4.setChecked(true);
+            }
+        }
+
+        if(mypref.contains("Isrb2Checked")){
+            if(mypref.getBoolean("Isrb2Checked",false)){
+                radioButton2Q4.setChecked(true);
+            }
+        }
+
+        if(mypref.contains("Isrb3Checked")){
+            if(mypref.getBoolean("Isrb3Checked",false)){
+                radioButton3Q4.setChecked(true);
+            }
+        }
     }
 
 }
