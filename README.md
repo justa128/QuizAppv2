@@ -30,4 +30,6 @@ The app architecture is as follows:<br />
 **Question 4**<br />
 ![image](https://cloud.githubusercontent.com/assets/9053854/23700391/10aa871a-040c-11e7-9add-c09d14b6ea45.png)
 
+I did not want to spoil the fun, so the answers in the above screenshots are not necessary correct :wink:
+
 
