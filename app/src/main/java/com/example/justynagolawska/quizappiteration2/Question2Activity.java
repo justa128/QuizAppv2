@@ -13,21 +13,18 @@ import android.widget.TextView;
 public class Question2Activity extends AppCompatActivity {
 
     SharedPreferences mypref;
+    CheckBox checkBox1Q2;
+    CheckBox checkBox2Q2;
+    CheckBox checkBox3Q2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question2);
 
-        // disable ScrollView in portrait mode
-//        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-//            ScrollView scrollView = (ScrollView)findViewById(R.id.scrollview1);
-//            scrollView.setEnabled(false);
-//        }
-
-        final CheckBox checkBox1Q2 = (CheckBox) findViewById(R.id.checkbox1Q2);
-        final CheckBox checkBox2Q2 = (CheckBox) findViewById(R.id.checkbox2Q2);
-        final CheckBox checkBox3Q2 = (CheckBox) findViewById(R.id.checkbox3Q2);
+        checkBox1Q2 = (CheckBox) findViewById(R.id.checkbox1Q2);
+        checkBox2Q2 = (CheckBox) findViewById(R.id.checkbox2Q2);
+        checkBox3Q2 = (CheckBox) findViewById(R.id.checkbox3Q2);
 
         mypref = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -110,15 +107,12 @@ public class Question2Activity extends AppCompatActivity {
         super.onPause();
 
         //Getting the answer to question 2 checkbox 1
-        CheckBox checkBox1Q2 = (CheckBox) findViewById(R.id.checkbox1Q2);
         boolean isCheckBox1Q2 = checkBox1Q2.isChecked();
 
         //Getting the answer to question 2 checkbox 2
-        CheckBox checkBox2Q2 = (CheckBox) findViewById(R.id.checkbox2Q2);
         boolean isCheckBox2Q2 = checkBox2Q2.isChecked();
 
         //Getting the answer to question 2 checkbox 3
-        CheckBox checkBox3Q2 = (CheckBox) findViewById(R.id.checkbox3Q2);
         boolean isCheckBox3Q2 = checkBox3Q2.isChecked();
 
         if(isCheckBox1Q2 == true){
@@ -147,15 +141,6 @@ public class Question2Activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        //Getting the answer to question 2 checkbox 1
-        CheckBox checkBox1Q2 = (CheckBox) findViewById(R.id.checkbox1Q2);
-
-        //Getting the answer to question 2 checkbox 2
-        CheckBox checkBox2Q2 = (CheckBox) findViewById(R.id.checkbox2Q2);
-
-        //Getting the answer to question 2 checkbox 3
-        CheckBox checkBox3Q2 = (CheckBox) findViewById(R.id.checkbox3Q2);
 
         if(mypref.contains("Iscb1Checked")){
             if(mypref.getBoolean("Iscb1Checked",false)){

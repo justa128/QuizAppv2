@@ -13,16 +13,20 @@ import android.widget.TextView;
 public class Question3Activity extends AppCompatActivity {
 
     SharedPreferences mypref;
+    CheckBox checkBox1Q3;
+    CheckBox checkBox2Q3;
+    CheckBox checkBox3Q3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question3);
 
-        final CheckBox checkBox1Q3 = (CheckBox) findViewById(R.id.checkbox1Q3);
-        final CheckBox checkBox2Q3 = (CheckBox) findViewById(R.id.checkbox2Q3);
-        final CheckBox checkBox3Q3 = (CheckBox) findViewById(R.id.checkbox3Q3);
+        checkBox1Q3 = (CheckBox) findViewById(R.id.checkbox1Q3);
+        checkBox2Q3 = (CheckBox) findViewById(R.id.checkbox2Q3);
+        checkBox3Q3 = (CheckBox) findViewById(R.id.checkbox3Q3);
 
+        //Initialise SharedPreferences
         mypref = PreferenceManager.getDefaultSharedPreferences(this);
 
         ActionBar actionbar = getSupportActionBar();
@@ -80,6 +84,7 @@ public class Question3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent question2Intent = new Intent(Question3Activity.this, Question2Activity.class);
+                question2Intent.putExtra ("q1result", resultQ1);
                 startActivity(question2Intent);
             }
         });
@@ -105,20 +110,18 @@ public class Question3Activity extends AppCompatActivity {
         return result;
     }
 
+    //This method is called when a user clicks next or previous button and goes to the other activity
     @Override
     protected void onPause() {
         super.onPause();
 
-        //Getting the answer to question 3 checkbox 1
-        CheckBox checkBox1Q3 = (CheckBox) findViewById(R.id.checkbox1Q3);
+        //Getting the checkbox 1 value for question 3
         boolean isCheckBox1Q3 = checkBox1Q3.isChecked();
 
-        //Getting the answer to question 3 checkbox 2
-        CheckBox checkBox2Q3 = (CheckBox) findViewById(R.id.checkbox2Q3);
+        //Getting the checkbox 2 value for question 3
         boolean isCheckBox2Q3 = checkBox2Q3.isChecked();
 
-        //Getting the answer to question 3 checkbox 3
-        CheckBox checkBox3Q3 = (CheckBox) findViewById(R.id.checkbox3Q3);
+        //Getting the checkbox 3 value for question 3
         boolean isCheckBox3Q3 = checkBox3Q3.isChecked();
 
         if(isCheckBox1Q3 == true){
@@ -147,10 +150,6 @@ public class Question3Activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        CheckBox checkBox1Q3 = (CheckBox) findViewById(R.id.checkbox1Q3);
-        CheckBox checkBox2Q3 = (CheckBox) findViewById(R.id.checkbox2Q3);
-        CheckBox checkBox3Q3 = (CheckBox) findViewById(R.id.checkbox3Q3);
 
         if(mypref.contains("Iscb1q3Checked")){
             if(mypref.getBoolean("Iscb1q3Checked",false)){

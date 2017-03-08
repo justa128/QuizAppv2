@@ -15,13 +15,16 @@ import android.widget.Toast;
 public class Question4Activity extends AppCompatActivity {
 
     SharedPreferences mypref;
+    RadioButton radioButton1Q4;
+    RadioButton radioButton2Q4;
+    RadioButton radioButton3Q4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question4);
 
-        final RadioButton radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
+        radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
 
         mypref = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -79,6 +82,8 @@ public class Question4Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent question3Intent = new Intent(Question4Activity.this, Question3Activity.class);
+                question3Intent.putExtra ("q1result", resultQ1);
+                question3Intent.putExtra ("q2result", resultQ2);
                 startActivity(question3Intent);
             }
         });
@@ -103,7 +108,6 @@ public class Question4Activity extends AppCompatActivity {
         super.onPause();
 
         //Getting the answer to question 4 radio button 1
-        RadioButton radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
         boolean isRadioButton1Q4 = radioButton1Q4.isChecked();
 
         //Getting the answer to question 4 radio button 2
@@ -141,7 +145,6 @@ public class Question4Activity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        RadioButton radioButton1Q4 = (RadioButton) findViewById(R.id.radiobutton1Q4);
         RadioButton radioButton2Q4 = (RadioButton) findViewById(R.id.radiobutton2Q4);
         RadioButton radioButton3Q4 = (RadioButton) findViewById(R.id.radiobutton3Q4);
 

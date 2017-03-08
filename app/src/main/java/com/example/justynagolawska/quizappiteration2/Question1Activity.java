@@ -14,18 +14,17 @@ import android.widget.TextView;
 public class Question1Activity extends AppCompatActivity {
 
     SharedPreferences mypref;
+    EditText answerQ1;
+    String answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question1);
 
-        final EditText answerQ1 = (EditText) findViewById(R.id.answer_robots);
+        answerQ1 = (EditText) findViewById(R.id.answer_robots);
 
         mypref = PreferenceManager.getDefaultSharedPreferences(this);
-
-//        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
-//        preferences.getString("Name", "Justyna");
 
         ActionBar actionbar = getSupportActionBar();
 
@@ -42,28 +41,14 @@ public class Question1Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Getting the answer to question 1
-                String answer = answerQ1.getText().toString();
+                answer = answerQ1.getText().toString();
 
                 //Calculate Question 1 score
                 int resultQ1 = calculateResultQ1(answer);
 
                 Intent question2Intent = new Intent(Question1Activity.this, Question2Activity.class);
                 question2Intent.putExtra("q1result", resultQ1);
-                Log.v("Question1Activity.this", "q1result");
                 startActivity(question2Intent);
-            }
-        });
-
-        // Find the View that shows the next TextView
-        TextView previousQuestion = (TextView) findViewById(R.id.previous);
-
-        // Set a click listener on that View
-        previousQuestion.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when next View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent question1Intent = new Intent(Question1Activity.this, MainActivity.class);
-                startActivity(question1Intent);
             }
         });
 
@@ -85,14 +70,12 @@ public class Question1Activity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
 
-        EditText answerQ1 = (EditText) findViewById(R.id.answer_robots);
-        String answer = answerQ1.getText().toString();
-
         mypref.edit().putString("MYLABEL", answer).apply(); //value to store
+
+        Log.v("my_tag", "onPause MYLABEL is "+ answer);
 
     }
 
@@ -100,8 +83,13 @@ public class Question1Activity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        mypref.getString("MYLABEL", "defaultStringIfNothingFound");
+        Log.v("my_tag", "onResume MYLABEL is "+  mypref.getString("MYLABEL", ""));
 
+        String text = mypref.getString("MYLABEL", "");
+
+        if(text != "") {
+            answerQ1.setText(text);
+        }
     }
 
 }

@@ -28,11 +28,6 @@
             android:text="@string/next" />
 
         <TextView
-            android:id="@+id/previous"
-            style="@style/Previous"
-            android:text="@string/previous" />
-
-        <TextView
             style="@style/BottomCaption"
             android:text="@string/q1" />
 
